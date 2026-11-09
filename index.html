@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Raymond Talapian — aspiring tech professional interested in web development and quality assurance. Student at FEU Institute of Technology, Manila. Selected work and IT internship portfolio.">
   <meta name="theme-color" content="#efefed">
-  <title>Raymond Talapian | Aspiring Tech Professional</title>
+  <title>Raymond Talapian</title>
   <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" sizes="any">
   <script src="assets/intro.js"></script>
@@ -13,7 +13,7 @@
     :root { --paper: #efefed; --ink: #111110; --muted: #65655f; --line: #cdcdc7; --gutter: clamp(24px, 6.2vw, 88px); }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 32px; scrollbar-gutter: stable; }
-    body { margin: 0; padding: 24px; background: #bebebc; color: var(--ink); font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { margin: 0; padding: 24px; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
     ::selection { background: var(--ink); color: var(--paper); }
     a { color: inherit; text-decoration: none; }
     button { color: inherit; font: inherit; }
@@ -25,13 +25,13 @@
     .micro { font-size: 11px; font-weight: 600; line-height: 1.35; text-transform: uppercase; }
     .skip-link { position: absolute; top: -80px; left: 32px; padding: 12px 18px; background: var(--ink); color: white; z-index: 10; }
     .skip-link:focus { top: 32px; }
-    .site-intro { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 24px; overflow: hidden; visibility: hidden; background: var(--ink); color: var(--paper); pointer-events: none; }
+    .site-intro { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 24px; overflow: hidden; visibility: hidden; background: var(--paper); color: var(--ink); pointer-events: none; }
     .intro-identity { width: min(100%, 1100px); text-align: center; }
     .intro-mark { display: block; width: 32px; height: 32px; margin: 0 auto clamp(28px, 4vw, 48px); opacity: 0; }
     .intro-name { display: flex; justify-content: center; gap: .24em; margin: 0; font-size: clamp(28px, 7.5vw, 104px); font-weight: 400; letter-spacing: -.065em; line-height: 1.15; }
     .intro-line { display: block; overflow: hidden; padding: 0 .04em .08em; margin: 0 -.04em -.08em; }
     .intro-line > span { display: block; transform: translateY(115%); }
-    .intro-rule { width: 72px; height: 1px; margin: clamp(28px, 4vw, 48px) auto 0; background: #efefed65; transform: scaleX(0); }
+    .intro-rule { width: 72px; height: 1px; margin: clamp(28px, 4vw, 48px) auto 0; background: var(--line); transform: scaleX(0); }
     .intro-active .site-intro { visibility: visible; }
     .intro-active.intro-ready .site-intro { animation: intro-curtain 900ms 2800ms cubic-bezier(.76,0,.24,1) both; }
     .intro-ready .intro-identity { animation: intro-identity-out 500ms 2550ms ease-in both; }
@@ -44,6 +44,8 @@
     @keyframes intro-rule { to { transform: scaleX(1); } }
     @keyframes intro-identity-out { to { opacity: 0; transform: translateY(-12px); } }
     @keyframes intro-curtain { from { transform: translateY(0); } to { transform: translateY(-101%); visibility: hidden; } }
+    .icon-arrow { display: inline-block; flex-shrink: 0; width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+    .footer .icon-arrow { width: 14px; height: 14px; }
     .header { display: flex; align-items: center; gap: 52px; min-height: 100px; }
     .brand { font-size: 13px; font-weight: 700; letter-spacing: -.035em; text-transform: uppercase; }
     .nav { display: flex; gap: 28px; }
@@ -103,7 +105,7 @@
     .statement .soft { color: var(--muted); }
     .about-details { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 36px; font-size: 14px; line-height: 1.65; }
     .text-link { display: inline-flex; align-items: center; gap: 18px; margin-top: 22px; padding-bottom: 5px; border-bottom: 1px solid var(--ink); font-size: 11px; font-weight: 600; text-transform: uppercase; }
-    .text-link span { font-size: 17px; transition: transform 180ms; }
+    .text-link span { display: inline-flex; transition: transform 180ms; }
     .text-link:hover span { transform: translate(3px, -3px); }
     .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-block: 32px 42px; }
     .section-heading h2 { font-size: clamp(40px, 6vw, 80px); line-height: .95; font-weight: 500; letter-spacing: -.065em; }
@@ -151,11 +153,14 @@
     .project-thumb span { font-size: 11px; font-weight: 500; line-height: 1.4; }
     .background-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; padding-top: 30px; }
     .background-grid h2 { font-size: 32px; font-weight: 500; line-height: 1; letter-spacing: -.05em; }
-    .education-row { display: flex; justify-content: space-between; gap: 30px; }
+    .education-list { display: grid; gap: 24px; }
+    .education-row { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px 24px; }
+    .education-row > div { flex: 1 1 260px; min-width: 0; }
+    .education-row + .education-row { padding-top: 24px; border-top: 1px solid var(--line); }
     .education-row h3 { display: flex; align-items: center; gap: 9px; font-size: 20px; font-weight: 500; letter-spacing: -.035em; line-height: 1.3; }
     .education-row .school-seal { width: auto; height: 1.15em; flex-shrink: 0; object-fit: contain; }
     .education-row p { margin-top: 9px; color: var(--muted); font-size: 13px; line-height: 1.6; }
-    .education-row .micro { white-space: nowrap; }
+    .education-row .micro { flex-shrink: 0; padding-top: 5px; white-space: nowrap; }
     .skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 4vw, 48px); margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--line); }
     .skills h3 { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: var(--muted); font-size: 10px; letter-spacing: .1em; }
     .skills h3::after { width: 24px; height: 1px; background: var(--line); content: ""; }
@@ -239,7 +244,8 @@
       .hero h1 { font-size: 10vw; }
       .hero-meta { font-size: 8px; gap: 12px; }
       .about-details { grid-template-columns: 1fr; gap: 18px; }
-      .education-row { flex-direction: column; }
+      .education-row { flex-direction: column; gap: 8px; }
+      .education-row > div { flex-basis: auto; }
       .skills { column-gap: 20px; row-gap: 28px; }
       .contact-main h2 { font-size: 13vw; }
     }
@@ -306,7 +312,7 @@
           <p class="section-note">A student, a curious builder, and a work in progress.</p>
           <div><p class="statement">I’m interested in web development and quality assurance. <span class="soft">Always learning. Finding better ways to build usable websites and make sure they work as intended.</span></p>
             <div class="about-details"><p>I'm Raymond, a BSITWMA student at FEU Institute of Technology in Manila. My focus is on thoughtful interfaces, responsive layouts, and the details that make a product easy to use.</p><p>I'm looking for an IT internship for the third term of 2027, where I can contribute, learn from a team, and turn classroom experience into practical work.</p></div>
-            <a class="text-link" href="mailto:raymond.talapian@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="mailto:raymond.talapian@gmail.com">Get in touch <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
           </div>
         </div>
       </section>
@@ -316,15 +322,15 @@
         <article class="featured-project" aria-labelledby="tyrant-title">
           <button class="project-cover" type="button" data-project-open aria-haspopup="dialog" aria-controls="tyrant-dialog" aria-label="Open the Tyrant AIM project overview">
             <img src="assets/tyrant-aim/dashboard.png" alt="Tyrant AIM player dashboard" width="1383" height="865" loading="lazy" decoding="async">
-            <span class="project-image-arrow" aria-hidden="true">&#8599;</span>
+            <span class="project-image-arrow" aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
           </button>
           <div class="project-summary">
             <p class="micro">Team capstone project / HRIS</p>
             <h3 id="tyrant-title">Tyrant AIM</h3>
             <p class="project-description">An HRIS for the Tyrant esports organization. My contribution combined frontend updates, manual QA testing, and AI-assisted troubleshooting.</p>
             <div class="project-actions">
-              <button class="text-link" type="button" data-project-open aria-haspopup="dialog" aria-controls="tyrant-dialog">View overview <span aria-hidden="true">&#8599;</span></button>
-              <a class="text-link project-live" href="https://tyrantaim.tech" target="_blank" rel="noopener noreferrer" aria-label="Visit Tyrant AIM (opens in a new tab)">Live site <span aria-hidden="true">&#8599;</span></a>
+              <button class="text-link" type="button" data-project-open aria-haspopup="dialog" aria-controls="tyrant-dialog">View overview <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button>
+              <a class="text-link project-live" href="https://tyrantaim.tech" target="_blank" rel="noopener noreferrer" aria-label="Visit Tyrant AIM (opens in a new tab)">Live site <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
             </div>
           </div>
         </article>
@@ -332,7 +338,18 @@
       <section class="section" id="education" aria-labelledby="education-title">
         <div class="section-top micro"><p>03 / Background</p><span>Building a foundation</span></div>
         <div class="background-grid"><h2 id="education-title">Learning.<br>Making. Growing.</h2>
-          <div><div class="education-row"><div><h3><img class="school-seal" src="assets/feu-tech-seal.png" width="286" height="349" alt="" loading="lazy" decoding="async"><span>FEU Institute of Technology</span></h3><p>BSITWMA · Web and Mobile Applications</p></div><span class="micro">Expected 2027</span></div>
+          <div>
+            <div class="education-list">
+              <div class="education-row"><div><h3><img class="school-seal" src="assets/feu-tech-seal.png" width="286" height="349" alt="" loading="lazy" decoding="async"><span>FEU Institute of Technology</span></h3><p>BSITWMA · Web and Mobile Applications</p></div><span class="micro">Expected 2027</span></div>
+              <div class="education-row">
+                <div>
+                  <!-- Seal source: https://www.ust.edu.ph/secgen/identity-guidelines/ -->
+                  <h3><img class="school-seal" src="assets/ust-seal.png" width="128" height="125" alt="" loading="lazy" decoding="async"><span>University of Santo Tomas</span></h3>
+                  <p>Senior High School<br>Science, Technology, Engineering and Mathematics (STEM)</p>
+                </div>
+                <span class="micro">Graduated 2020</span>
+              </div>
+            </div>
             <div class="skills" id="skills" aria-label="Skills and tools">
               <div>
                 <h3 class="micro">Development</h3>
@@ -376,7 +393,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer inset"><p>© <span id="year">2026</span> Raymond Talapian</p><a class="micro" href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+    <footer class="footer inset"><p>© <span id="year">2026</span> Raymond Talapian</p><a class="micro" href="#top">Back to top <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20V4m-6 6 6-6 6 6"/></svg></span></a></footer>
   </div>
   <dialog class="project-modal" id="tyrant-dialog" aria-labelledby="tyrant-modal-title" aria-describedby="tyrant-modal-summary">
     <header class="project-modal-header">
@@ -388,7 +405,7 @@
           <div class="project-gallery" aria-label="Tyrant AIM screenshots">
             <a class="project-gallery-image" id="tyrant-preview-link" href="assets/tyrant-aim/dashboard.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Tyrant AIM dashboard screenshot at full size (opens in a new tab)">
               <img id="tyrant-preview" src="assets/tyrant-aim/dashboard.png" alt="Tyrant AIM player dashboard with session attendance, match upload, and performance statistics" width="1383" height="865" loading="lazy" decoding="async">
-              <span class="project-image-arrow" aria-hidden="true">↗</span>
+              <span class="project-image-arrow" aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
             </a>
             <nav class="project-gallery-controls" aria-label="Choose a Tyrant AIM screenshot">
               <a class="project-thumb" href="assets/tyrant-aim/dashboard.png" aria-current="true" aria-controls="tyrant-preview" aria-label="Preview dashboard screenshot" data-title="dashboard" data-width="1383" data-height="865" data-alt="Tyrant AIM player dashboard with session attendance, match upload, and performance statistics">
@@ -405,7 +422,7 @@
     </div>
     <footer class="project-modal-footer">
       <span class="micro">Team capstone project</span>
-      <a class="text-link" href="https://tyrantaim.tech" target="_blank" rel="noopener noreferrer" aria-label="Visit Tyrant AIM (opens in a new tab)">View live project <span aria-hidden="true">&#8599;</span></a>
+      <a class="text-link" href="https://tyrantaim.tech" target="_blank" rel="noopener noreferrer" aria-label="Visit Tyrant AIM (opens in a new tab)">View live project <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
     </footer>
   </dialog>
   <div class="copy-status" role="status" aria-live="polite"></div>
