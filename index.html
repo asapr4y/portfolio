@@ -120,6 +120,11 @@
     .project-summary h3 { margin-top: 12px; font-size: clamp(30px, 3.5vw, 42px); font-weight: 500; letter-spacing: -.055em; line-height: 1; }
     .project-description { max-width: 720px; color: var(--muted); font-size: 14px; line-height: 1.75; }
     .project-summary .project-description { margin-top: 18px; }
+    .project-demo-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .project-demo-link { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 11px 16px; border: 1px solid var(--ink); border-radius: 100px; font-size: 12px; font-weight: 600; transition: background 180ms, color 180ms; }
+    .project-demo-link:hover { background: var(--ink); color: var(--paper); }
+    .project-demo-link svg { width: 14px; height: 14px; flex-shrink: 0; fill: currentColor; }
+    .project-modal-body .project-demo-actions { margin: 0 0 22px; }
     .project-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 24px; margin-top: 12px; }
     .project-actions .text-link { min-height: 44px; margin: 0; padding: 8px 0; background: none; cursor: pointer; border: 0; border-bottom: 1px solid var(--ink); }
     .project-actions .project-live { color: var(--muted); border-color: var(--line); }
@@ -328,6 +333,10 @@
             <p class="micro">Team capstone project / HRIS</p>
             <h3 id="tyrant-title">Tyrant AIM</h3>
             <p class="project-description">An HRIS for the Tyrant esports organization. My contribution combined frontend updates, manual QA testing, and AI-assisted troubleshooting.</p>
+            <div class="project-demo-actions" role="group" aria-label="Watch Tyrant AIM demos">
+              <a class="project-demo-link" href="https://drive.google.com/file/d/1FcCjTQwcZcRze0Ce-QK8S_j9pZ0YFpBd/view" target="_blank" rel="noopener noreferrer" aria-label="Watch Tyrant AIM web demo (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4v16l13-8z"/></svg>Watch web demo</a>
+              <a class="project-demo-link" href="https://drive.google.com/file/d/1h7okzNlIz0Op_TgERhwbT2X7fuv5HTq0/view" target="_blank" rel="noopener noreferrer" aria-label="Watch Tyrant AIM mobile demo (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4v16l13-8z"/></svg>Watch mobile demo</a>
+            </div>
             <div class="project-actions">
               <button class="text-link" type="button" data-project-open aria-haspopup="dialog" aria-controls="tyrant-dialog">View overview <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button>
               <a class="text-link project-live" href="https://tyrantaim.tech" target="_blank" rel="noopener noreferrer" aria-label="Visit Tyrant AIM (opens in a new tab)">Live site <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
@@ -402,6 +411,10 @@
     </header>
     <div class="project-modal-body">
       <p class="project-description" id="tyrant-modal-summary">Tyrant AIM (AI Management) is our team’s capstone project—an AI-powered HRIS developed for Tyrant Esports. It centralizes player records, attendance, contracts, and payroll, alongside match-stat extraction from MLBB and COD Mobile screenshots, performance analytics, optimized practice scheduling, and rule-based coaching recommendations. My contributions focused on adding and refining frontend elements, performing manual QA testing, and troubleshooting issues using browser DevTools and AI-assisted development tools.</p>
+      <div class="project-demo-actions" role="group" aria-label="Watch Tyrant AIM demos">
+        <a class="project-demo-link" href="https://drive.google.com/file/d/1FcCjTQwcZcRze0Ce-QK8S_j9pZ0YFpBd/view" target="_blank" rel="noopener noreferrer" aria-label="Watch Tyrant AIM web demo (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4v16l13-8z"/></svg>Watch web demo</a>
+        <a class="project-demo-link" href="https://drive.google.com/file/d/1h7okzNlIz0Op_TgERhwbT2X7fuv5HTq0/view" target="_blank" rel="noopener noreferrer" aria-label="Watch Tyrant AIM mobile demo (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4v16l13-8z"/></svg>Watch mobile demo</a>
+      </div>
           <div class="project-gallery" aria-label="Tyrant AIM screenshots">
             <a class="project-gallery-image" id="tyrant-preview-link" href="assets/tyrant-aim/dashboard.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Tyrant AIM dashboard screenshot at full size (opens in a new tab)">
               <img id="tyrant-preview" src="assets/tyrant-aim/dashboard.png" alt="Tyrant AIM player dashboard with session attendance, match upload, and performance statistics" width="1383" height="865" loading="lazy" decoding="async">
