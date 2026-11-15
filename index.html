@@ -113,6 +113,9 @@
     #work .section-heading { padding-block: 28px 30px; }
     #work .section-heading h2 { font-size: clamp(36px, 4.8vw, 64px); }
     .featured-project { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: clamp(24px, 4vw, 56px); }
+    .featured-project + .featured-project { margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .project-status { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; padding: 6px 10px; border: 1px solid #cbbd97; border-radius: 100px; background: #eae3d3; color: #65501f; font-size: 11px; font-weight: 600; line-height: 1.4; }
+    .project-status::before { content: ''; width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: currentColor; }
     .project-cover { position: relative; display: block; width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: #e5e5df; cursor: pointer; }
     .project-cover img { height: auto; aspect-ratio: 16 / 10; object-fit: contain; border-radius: 5px; background: #fafaf9; }
     .project-cover:hover .project-image-arrow { transform: translate(2px, -2px); }
@@ -322,8 +325,8 @@
         </div>
       </section>
       <section class="section" id="work" aria-labelledby="work-title">
-        <div class="section-top micro"><p>02 / Portfolio</p><span>A team project, my contribution</span></div>
-        <div class="section-heading"><h2 id="work-title">Featured project</h2><p>Capstone project<br>/ HRIS</p></div>
+        <div class="section-top micro"><p>02 / Portfolio</p><span>Selected applications</span></div>
+        <div class="section-heading"><h2 id="work-title">Featured projects</h2><p>Web &amp; mobile<br>/ Selected work</p></div>
         <article class="featured-project" aria-labelledby="tyrant-title">
           <button class="project-cover" type="button" data-project-open aria-haspopup="dialog" aria-controls="tyrant-dialog" aria-label="Open the Tyrant AIM project overview">
             <img src="assets/tyrant-aim/dashboard.png" alt="Tyrant AIM player dashboard" width="1383" height="865" loading="lazy" decoding="async">
@@ -340,6 +343,22 @@
             <div class="project-actions">
               <button class="text-link" type="button" data-project-open aria-haspopup="dialog" aria-controls="tyrant-dialog">View overview <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button>
               <a class="text-link project-live" href="https://tyrantaim.tech" target="_blank" rel="noopener noreferrer" aria-label="Visit Tyrant AIM (opens in a new tab)">Live site <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
+            </div>
+          </div>
+        </article>
+        <article class="featured-project" aria-labelledby="final-take-title">
+          <button class="project-cover" type="button" data-project-open aria-haspopup="dialog" aria-controls="final-take-dialog" aria-label="Open the Final Take project overview">
+            <img src="assets/final-take/home.jpg" alt="Final Take home page with its cinema marquee and film posters" width="2560" height="1080" loading="lazy" decoding="async">
+            <span class="project-image-arrow" aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
+          </button>
+          <div class="project-summary">
+            <p class="micro">Full-stack web application / Film discovery &amp; journaling</p>
+            <h3 id="final-take-title">Final Take</h3>
+            <p class="project-status">Work in progress</p>
+            <p class="project-description">A film discovery and journaling application that helps film enthusiasts find movies, record their viewing history, write reviews, and maintain a personal watchlist.</p>
+            <div class="project-actions">
+              <button class="text-link" type="button" data-project-open aria-haspopup="dialog" aria-controls="final-take-dialog">View overview <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button>
+              <a class="text-link project-live" href="https://final-take-beta.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit Final Take, a work in progress (opens in a new tab)">Live site <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
             </div>
           </div>
         </article>
@@ -436,6 +455,37 @@
     <footer class="project-modal-footer">
       <span class="micro">Team capstone project</span>
       <a class="text-link" href="https://tyrantaim.tech" target="_blank" rel="noopener noreferrer" aria-label="Visit Tyrant AIM (opens in a new tab)">View live project <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
+    </footer>
+  </dialog>
+  <dialog class="project-modal" id="final-take-dialog" aria-labelledby="final-take-modal-title" aria-describedby="final-take-modal-summary">
+    <header class="project-modal-header">
+      <div><p class="micro">Full-stack web application / Film discovery &amp; journaling</p><h2 id="final-take-modal-title" tabindex="-1">Final Take</h2></div>
+      <button class="project-modal-close" type="button" aria-label="Close project overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </header>
+    <div class="project-modal-body">
+      <p class="project-description" id="final-take-modal-summary">Final Take is a full-stack film discovery and journaling web application, currently a work in progress. It helps film enthusiasts discover movies, record their viewing history, write reviews, and maintain a personal watchlist.</p>
+      <p class="project-description">Implemented features include TMDB movie discovery with title search, genre filters, sorting, and pagination; detailed film pages with posters, backdrops, synopses, directors, release years, runtimes, and genres; and account registration, login, logout, and persistent sessions. The film diary supports ratings from 0.5 to 5 stars, watched dates, written reviews, spoiler labels, repeat viewings, and editing or deleting your own entries. Personal watchlists, public profiles with biographies and four favorite films, viewing statistics, recent diary entries, community reviews, and aggregate ratings round out the current feature set.</p>
+      <div class="project-gallery" aria-label="Final Take screenshots">
+        <a class="project-gallery-image" id="final-take-preview-link" href="assets/final-take/home.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the Final Take home screenshot at full size (opens in a new tab)">
+          <img id="final-take-preview" src="assets/final-take/home.jpg" alt="Final Take home page with a cinema marquee, film posters, and a link to the film diary" width="2560" height="1080" loading="lazy" decoding="async">
+          <span class="project-image-arrow" aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
+        </a>
+        <nav class="project-gallery-controls" aria-label="Choose a Final Take screenshot">
+          <a class="project-thumb" href="assets/final-take/home.jpg" aria-current="true" aria-controls="final-take-preview" aria-label="Preview home screenshot" data-title="home" data-width="2560" data-height="1080" data-alt="Final Take home page with a cinema marquee, film posters, and a link to the film diary">
+            <img src="assets/final-take/home.jpg" width="2560" height="1080" alt="" loading="lazy"><span>01 / Home</span>
+          </a>
+          <a class="project-thumb" href="assets/final-take/discover.jpg" aria-controls="final-take-preview" aria-label="Preview movie discovery screenshot" data-title="movie discovery" data-width="2560" data-height="1080" data-alt="Final Take movie discovery page with a search field, genre filters, sorting, and a grid of film posters">
+            <img src="assets/final-take/discover.jpg" width="2560" height="1080" alt="" loading="lazy"><span>02 / Discovery</span>
+          </a>
+          <a class="project-thumb" href="assets/final-take/film-details.jpg" aria-controls="final-take-preview" aria-label="Preview film details screenshot" data-title="film details" data-width="2560" data-height="1080" data-alt="Final Take film detail page for Project Hail Mary, showing its backdrop, synopsis, film information, and rating and review form">
+            <img src="assets/final-take/film-details.jpg" width="2560" height="1080" alt="" loading="lazy"><span>03 / Film details</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+    <footer class="project-modal-footer">
+      <span class="micro">Work in progress</span>
+      <a class="text-link" href="https://final-take-beta.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit Final Take, a work in progress (opens in a new tab)">View live project <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
     </footer>
   </dialog>
   <div class="copy-status" role="status" aria-live="polite"></div>
